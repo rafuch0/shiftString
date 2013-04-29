@@ -1,0 +1,35 @@
+<html><head></head><body>
+<script>
+
+function shiftString(string, shift)
+{
+	if(shift === 0)
+	{
+		return string;
+	}
+	else if(shift > 0)
+	{
+		for(var i = 0; i < shift; i++)
+		{
+			string = string.substring(1, string.length)+''+string[0];
+		}
+	}
+	else
+	{
+		for(var i = 0; i < -1*shift; i++)
+		{
+			string = string[string.length - 1]+''+string.substring(0, string.length - 1);
+		}
+	}
+
+	return string;
+}
+
+
+for(var i = -10; i < 10; i++)
+{
+	document.write("<br>"+shiftString('abcdefghij', i));
+}
+
+</script>
+</body></html>
